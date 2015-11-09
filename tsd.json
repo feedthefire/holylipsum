@@ -1,0 +1,42 @@
+{
+  "version": "v4",
+  "repo": "DefinitelyTyped/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "node/node.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "errorhandler/errorhandler.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "express/express.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "validator/validator.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "method-override/method-override.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "sequelize/sequelize.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    },
+    "mime/mime.d.ts": {
+      "commit": "421d6610bdb09e1015b71f5991d7a68d079eca21"
+    }
+  }
+}

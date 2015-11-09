@@ -1,0 +1,7 @@
+**/.DS_Store
+*.js
+node_modules
+*.map
+typings
+secret-config.json
+www/**/*.ejs
