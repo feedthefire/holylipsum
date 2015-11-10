@@ -3,14 +3,15 @@
 
 import express = require("express")
 import sequelize = require('sequelize');
-import databaseConfig = require('../conf/database-config');
+import appConfig = require('../conf/app-config');
 import modelFactory = require('../models/sequelize-model-factory');
 
 
 export function index(req: express.Request, res: express.Response) {
 
     // var _:sequelize.Lodash = sequelize.Utils._;
-    var dbConfig = new databaseConfig.Config();
+    var gaConfig = new appConfig.gaConfig();
+    var dbConfig = new appConfig.dbConfig();
     var models = new modelFactory.Models(dbConfig.database, dbConfig.user, dbConfig.password, dbConfig.options);
 
     var actor = req.query.Actor,
@@ -34,6 +35,7 @@ export function index(req: express.Request, res: express.Response) {
         .then(function(lineRows) {
             var pageData = {
                 title: 'The Holy Grail of Lorem Ipsum',
+                gaCode: gaConfig.key,
                 actor: actor,
                 scene: scene,
                 numLines: numLines,

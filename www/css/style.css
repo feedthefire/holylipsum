@@ -1,0 +1,19 @@
+body{
+    background-color:#FFF;
+    font-family: "Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace;
+    color: #212121;
+}
+
+h1{
+    font-family: 'Uncial Antiqua', cursive;
+    font-size: 66px;
+}
+
+p {
+    font-size:18px;
+}
+
+.container{
+    max-width:600px;
+    margin:50px auto;
+}
