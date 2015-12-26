@@ -27,12 +27,12 @@ export class Config implements IConfig {
     options: Object;
 
     constructor() {
-        this.host = config.mysql.host,
         this.database = config.mysql.database, 
         this.user = config.mysql.user, 
         this.password = config.mysql.password, 
         this.options = {
             dialect: "mysql",
+            host: config.mysql.host,
             port: 3306,
             define: {
                 freezeTableName: true
