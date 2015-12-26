@@ -11,7 +11,7 @@ catch (err) {
   console.log("see secret-config-sample.json for an example")
 }
 
-export interface IConfig {
+export interface databaseConfig {
     host?: string;
     user: string;
     password: string;
@@ -19,7 +19,11 @@ export interface IConfig {
     options?: Object
 }
 
-export class Config implements IConfig {
+export interface analyticsConfig {
+    key: string;
+}
+
+export class dbConfig implements databaseConfig {
     host: string;
     user: string;
     password: string;
@@ -38,6 +42,15 @@ export class Config implements IConfig {
                 freezeTableName: true
             }
         }
+    }
+
+}
+
+export class gaConfig implements analyticsConfig {
+    key: string;
+
+    constructor() {
+        this.key = config.analytics.ga
     }
 
 }
