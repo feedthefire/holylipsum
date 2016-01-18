@@ -1,0 +1,27 @@
+<% include header %>
+
+<h1><%= title %></h1>
+
+<div id="lines">
+    <p><%= scene.description %></p>
+    <!--<p>
+        <% if(prevScene){ %><a href="/scenes/<%= prevScene.scene.replace(' ', '-') %>">prev</a>&nbsp;<% } %>
+        <% if(nextScene){ %><a href="/scenes/<%= nextScene.scene.replace(' ', '-') %>">next</a><% } %>
+    </p>-->
+    <% for(var i=0; i<lines.length; i++) { %>
+    <div class="line-row">
+        <div class="line-actor">
+            <%= lines[i].actor %>:
+        </div>
+        <div class="line-line">
+            <%= lines[i].line %>
+        </div>
+    </div>
+    <% } %>
+    <p>
+        <% if(prevScene){ %><a href="/scenes/<%= prevScene.scene.replace(' ', '-') %>">prev</a>&nbsp;<% } %>
+        <% if(nextScene){ %><a href="/scenes/<%= nextScene.scene.replace(' ', '-') %>">next</a><% } %>
+    </p>
+</div>
+
+<% include footer %>

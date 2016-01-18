@@ -30,11 +30,12 @@ var asserters:{[typeName:string]:(pojo:any, allowUndefined?:boolean) => void} = 
 export interface linePojo
 {
     id?:Id;
-    scene?:string;
+    scene_id?:number;
     actor?:string;
     line?:string;
     date_created?:Date;
     date_updated?:Date;
+    scene_scene?:scenePojo;
 }
 
 export interface lineInstance extends sequelize.Instance<lineInstance, linePojo>, linePojo { }
@@ -61,17 +62,75 @@ export function assertValidline(pojo:linePojo, allowUndefined?:boolean):void {
     while(i-- > 0) {
         switch(fieldNames[i]) {
             case 'id': assertValidFieldType('line', 'id', pojo, 'number'); break;
-            case 'scene': assertValidFieldType('line', 'scene', pojo, 'string'); break;
+            case 'scene_id': assertValidFieldType('line', 'scene_id', pojo, 'number'); break;
             case 'actor': assertValidFieldType('line', 'actor', pojo, 'string'); break;
             case 'line': assertValidFieldType('line', 'line', pojo, 'string'); break;
             case 'date_created': assertValidFieldType('line', 'date_created', pojo, 'Date'); break;
             case 'date_updated': assertValidFieldType('line', 'date_updated', pojo, 'Date'); break;
+            case 'scene_scene': assertValidFieldType('line', 'scene_scene', pojo, 'scenePojo'); break;
             default:
                 throw new Error('Invalid line provided. Field \'' + fieldNames[i] + '\' is not supported.')
         }
     }
 }
 asserters['line'] = assertValidline;
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//
+//               scene
+//
+//
+//////////////////////////////////////////////////////////////////////////////
+
+
+export interface scenePojo
+{
+    id?:Id;
+    scene?:string;
+    description?:string;
+    line_count?:number;
+    line?:linePojo[];
+}
+
+export interface sceneInstance extends sequelize.Instance<sceneInstance, scenePojo>, scenePojo { }
+
+export interface sceneModel extends sequelize.Model<sceneInstance, scenePojo> {
+    getscene(id:Id):sequelize.PromiseT<sceneInstance>;
+    getscene(scene:scenePojo):sequelize.PromiseT<sceneInstance>;
+}
+
+export function assertValidscene(pojo:scenePojo, allowUndefined?:boolean):void {
+
+    if (pojo === undefined || pojo === null) {
+        if (allowUndefined) {
+            return;
+        }
+        throw new Error('Invalid scene provided. It is \'' + (typeof pojo) + '\'.');
+    }
+    var fieldNames:string[] = Object.keys(pojo);
+    if (fieldNames.length === 0) {
+        throw new Error('Invalid scene provided. It is an empty object.');
+    }
+
+    var i:number = fieldNames.length;
+    while(i-- > 0) {
+        switch(fieldNames[i]) {
+            case 'id': assertValidFieldType('scene', 'id', pojo, 'number'); break;
+            case 'scene': assertValidFieldType('scene', 'scene', pojo, 'string'); break;
+            case 'description': assertValidFieldType('scene', 'description', pojo, 'string'); break;
+            case 'line_count': assertValidFieldType('scene', 'line_count', pojo, 'number'); break;
+            case 'line': assertValidFieldType('scene', 'line', pojo, 'linePojo[]'); break;
+            default:
+                throw new Error('Invalid scene provided. Field \'' + fieldNames[i] + '\' is not supported.')
+        }
+    }
+}
+asserters['scene'] = assertValidscene;
 
 
 

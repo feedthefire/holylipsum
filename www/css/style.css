@@ -1,12 +1,16 @@
 body{
     background-color:#FFF;
-    font-family: "Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace;
+    /*font-family: Helvetica, sans-serif;*/
+    font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,serif;
     color: #212121;
 }
 
 h1{
     font-family: 'Uncial Antiqua', cursive;
-    font-size: 66px;
+    font-size: 64px;
+    white-space:pre-wrap;
+    padding:10px 0;
+    margin:0 0 20px 0;
 }
 
 p {
@@ -14,6 +18,164 @@ p {
 }
 
 .container{
-    max-width:600px;
-    margin:50px auto;
+    max-width:640px;
+    padding:10px;
+    margin:0 auto;
 }
+
+#filters {
+    padding:10px;
+    background-color:#F1F1F1;
+    margin-bottom:20px;
+}
+
+#filters .filter{
+    float:left;
+    padding-right:10px;
+}
+
+#lines{
+    clear:both;
+    padding:10px;
+    /*font-family: "Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace;*/
+}
+
+#lines .line-row{
+    display: block;
+    clear:both;
+    padding: 0 0 10px 0;
+}
+
+#lines .line-row .line-actor{
+    float:left;
+    width:150px;
+    padding-top:3px;
+    color:#ACACAC;
+    font-size:12px;
+    font-weight: bold;
+    text-align:right;
+}
+
+#lines .line-row .line-line{
+    margin-left:160px;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Modular */
+
+.m0{ margin:0px;}
+.m10{ margin:10px;}
+
+.mtb5{ margin:5px 0px;}
+.mtb10{ margin:10px 0px;}
+.mtb20{ margin:20px 0px;}
+
+.mlr5{ margin:0px 5px;}
+.mlr10{ margin:0px 10px;}
+.mlr20{ margin:0px 20px;}
+
+.mt10{ margin-top:10px;}
+.mb10{ margin-bottom:10px;}
+.ml10{ margin-left:10px;}
+.mr10{ margin-right:10px;}
+
+.m5{ margin:5px;}
+
+.mtb5{ margin:5px 0px;}
+
+.mt5{ margin-top:5px;}
+.mb5{ margin-bottom:5px;}
+.ml5{ margin-left:5px;}
+.mr5{ margin-right:5px;}
+
+.mt20{ margin-top:20px;}
+.ml20{ margin-left:20px;}
+.mb20{ margin-bottom:20px;}
+.mr20{ margin-right:20px;}
+
+.p10{ padding:10px;}
+.p20{ padding:20px;}
+.p3{ padding:3px;}
+
+.pt10{ padding-top:10px;}
+.pt20{ padding-top:20px;}
+
+.pb10{ padding-bottom:10px;}
+.pb20{ padding-bottom:20px;}
+
+.pl5{ padding-left:5px;}
+.pl10{ padding-left:10px;}
+.pl20{ padding-left:20px;}
+
+.pr5{ padding-right:5px;}
+.pr10{ padding-right:10px;}
+.pr20{ padding-right:20px;}
+
+.p5{ padding:5px;}
+.pt5{ padding-top:5px;}
+.pb5{ padding-bottom:5px;}
+
+.h1{ height:1px;}
+
+.fl{ float:left;}
+.fr{ float:right;}
+.clear{ clear:both;}
+
+.cursor-pointer{ cursor:pointer;}
+
+.s9{ font-size:9px;}
+.s10{ font-size:10px;}
+.s11{ font-size:11px;}
+.s12{ font-size:12px;}
+.s13{ font-size:13px;}
+.s14{ font-size:14px;}
+.s15{ font-size:15px;}
+.s16{ font-size:16px;}
+.s18{ font-size:18px;}
+.s22{ font-size:22px;}
+.s45{ font-size:45px;}
+
+.al{ text-align:left; }
+.ar{ text-align:right; }
+.ac{ text-align:center; }
+
+.b{ font-weight:bold;}
+.n{ font-weight:normal;}
+.caps{text-transform:uppercase;}
+.truncate{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ltgrey{ color:#AEAEAE;}
+.grey{ color:#999;}
+.dkgrey{ color:#555;}
+.black{ color:#000;}
+
+.centered{margin-left:auto;margin-right:auto;}
+

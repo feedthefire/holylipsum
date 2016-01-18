@@ -11,6 +11,7 @@ import errorHandler = require("errorhandler");
 
 import routeIndex = require("./routes/index")
 import routeAbout = require("./routes/about")
+import routeScenes = require("./routes/scenes")
 
 var port = process.env.port || 3003;  
 var app = express();
@@ -34,7 +35,9 @@ else if (env === 'production') {
 }
 
 // Routes
-app.get('/', routeIndex.index);
-app.get('/about/', routeAbout.about);
+app.get('/', routeIndex.view);
+app.get('/scenes/', routeScenes.view);
+app.get('/scenes/:scene', routeScenes.view);
+app.get('/about/', routeAbout.view);
 app.listen(port);
 console.log('Running server at http://localhost:' + port); 

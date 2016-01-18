@@ -1,83 +1,114 @@
 <% include header %>
 
 <h1><%= title %></h1>
-<div style="padding-bottom:10px;border-bottom:1px solid #CCC;margin-bottom:10px;">
-    <form id="filters" action="" method="GET">
-        <select name="Actor" onchange="this.form.submit()">
-            <option value="">-- All Actors --</option>
-            <option value="Arthur"<%= actor == 'Arthur' ? "selected" : "" %>>Arthur</option>
-            <option value="FRENCH GUARD"<%= actor == 'FRENCH GUARD' ? "selected" : "" %>>French Guard</option>
-            <option value="GUARD"<%= actor == 'GUARD' ? "selected" : "" %>>Guard</option>
-            <option value="GOD"<%= actor == 'GOD' ? "selected" : "" %>>God</option>
-            <option value="BLACK KNIGHT"<%= actor == 'BLACK KNIGHT' ? "selected" : "" %>>Black Knight</option>
-            <option value="ROBIN"<%= actor == 'ROBIN' ? "selected" : "" %>>Robin</option>
-            <option value="LANCELOT"<%= actor == 'LANCELOT' ? "selected" : "" %>>Lancelot</option>
-            <option value="GALAHAD"<%= actor == 'GALAHAD' ? "selected" : "" %>>Galahad</option>
-            <option value="HEAD"<%= actor == 'HEAD' ? "selected" : "" %>>Head Knight</option>
-            <option value="KNIGHT"<%= actor == 'KNIGHT' ? "selected" : "" %>>Knight</option>
-            <option value="TIM"<%= actor == 'TIM' ? "selected" : "" %>>Tim The Enchanter</option>
-            <option value="FATHER"<%= actor == 'FATHER' ? "selected" : "" %>>Father</option>
-            <option value="BEDEMIR"<%= actor == 'BEDEMIR' ? "selected" : "" %>>Bedemir</option>
-            <option value="HERBERT"<%= actor == 'HERBERT' ? "selected" : "" %>>Herbert</option>
-            <option value="DENNIS"<%= actor == 'DENNIS' ? "selected" : "" %>>Dennis</option>
-            <option value="WOMAN"<%= actor == 'WOMAN' ? "selected" : "" %>>Woman</option>
-            <option value="WITCH"<%= actor == 'WITCH' ? "selected" : "" %>>Witch</option>                
-            <option value="MINSTREL"<%= actor == 'MINSTREL' ? "selected" : "" %>>Minstrel</option>
-            <option value="CONCORDE"<%= actor == 'CONCORDE' ? "selected" : "" %>>Concorde</option>
-            <option value="NARRATOR"<%= actor == 'NARRATOR' ? "selected" : "" %>>Narrator</option>
-            
-        </select>
-        &nbsp;
-        <select name="Scene" onchange="this.form.submit()">
-            <option value="">-- All Scenes --</option>
-            <option value="Scene 1"<%= scene == 'Scene 1' ? "selected" : "" %>>Scene 1</option>
-            <option value="Scene 2"<%= scene == 'Scene 2' ? "selected" : "" %>>Scene 2</option>
-            <option value="Scene 3"<%= scene == 'Scene 3' ? "selected" : "" %>>Scene 3</option>
-            <option value="Scene 4"<%= scene == 'Scene 4' ? "selected" : "" %>>Scene 4</option>
-            <option value="Scene 5"<%= scene == 'Scene 5' ? "selected" : "" %>>Scene 5</option>
-            <option value="Narrative Interlude"<%= scene == 'Narrative Interlude' ? "selected" : "" %>>Narrative Interlude</option>
-            <option value="Scene 6"<%= scene == 'Scene 6' ? "selected" : "" %>>Scene 6</option>
-            <option value="Scene 7"<%= scene == 'Scene 7' ? "selected" : "" %>>Scene 7</option>
-            <option value="Scene 8"<%= scene == 'Scene 8' ? "selected" : "" %>>Scene 8</option>
-            <option value="Scene 9"<%= scene == 'Scene 9' ? "selected" : "" %>>Scene 9</option>
-            <option value="Scene 10"<%= scene == 'Scene 10' ? "selected" : "" %>>Scene 10</option>
-            <option value="Scene 11"<%= scene == 'Scene 11' ? "selected" : "" %>>Scene 11</option>
-            <option value="Narrative Interlude 2"<%= scene == 'Narrative Interlude 2' ? "selected" : "" %>>Narrative Interlude 2</option>
-            <option value="Scene 24"<%= scene == 'Scene 24' ? "selected" : "" %>>Scene 24</option>
-            <option value="Scene 25"<%= scene == 'Scene 25' ? "selected" : "" %>>Scene 25</option>
-            <option value="Scene 26"<%= scene == 'Scene 26' ? "selected" : "" %>>Scene 26</option>
-            <option value="Scene 27"<%= scene == 'Scene 27' ? "selected" : "" %>>Scene 27</option>
-            <option value="Scene 28"<%= scene == 'Scene 28' ? "selected" : "" %>>Scene 28</option>
-            <option value="Scene 29"<%= scene == 'Scene 29' ? "selected" : "" %>>Scene 29</option>
-            <option value="Scene 30"<%= scene == 'Scene 30' ? "selected" : "" %>>Scene 30</option>
-            <option value="Scene 31"<%= scene == 'Scene 31' ? "selected" : "" %>>Scene 31</option>
-            <option value="Narrative Interlude 3"<%= scene == 'Narrative Interlude 3' ? "selected" : "" %>>Narrative Interlude 3</option>
-            <option value="Scene 32"<%= scene == 'Scene 32' ? "selected" : "" %>>Scene 32</option>
-            <option value="Scene 33"<%= scene == 'Scene 33' ? "selected" : "" %>>Scene 33</option>
-            <option value="Scene 34"<%= scene == 'Scene 34' ? "selected" : "" %>>Scene 34</option>
-            <option value="Scene 35"<%= scene == 'Scene 35' ? "selected" : "" %>>Scene 35</option>
-            <option value="Scene 36"<%= scene == 'Scene 36' ? "selected" : "" %>>Scene 36</option>
-            <option value="Scene 37"<%= scene == 'Scene 37' ? "selected" : "" %>>Scene 37</option>
-        </select>
-        &nbsp;
-        <select name="NumLines" onchange="this.form.submit()">
-            <option value="10"<%= numLines == '10' ? "selected" : "" %>>10 lines</option>
-            <option value="20"<%= numLines == '20' ? "selected" : "" %>>20 lines</option>
-            <option value="30"<%= numLines == '30' ? "selected" : "" %>>30 lines</option>
-            <option value="40"<%= numLines == '40' ? "selected" : "" %>>40 lines</option>
-            <option value="50"<%= numLines == '50' ? "selected" : "" %>>50 lines</option>
-        </select>
-        &nbsp;
-        <input type="submit" value="Generate" />
+
+<div id="filters">
+    
+    <div class="pb10">
+        Filter the most holy lorem ipsum:
+    </div>
+
+    <form class="filters-form" action="" method="GET">
+        <div class="filter">
+            <select name="Actor" onchange="this.form.submit()">
+                <option value="">-- All Actors --</option>
+                <option value="Arthur"<%= actor == 'Arthur' ? "selected" : "" %>>Arthur</option>
+                <option value="ROBIN"<%= actor == 'ROBIN' ? "selected" : "" %>>Robin</option>
+                <option value="LANCELOT"<%= actor == 'LANCELOT' ? "selected" : "" %>>Lancelot</option>
+                <option value="GALAHAD"<%= actor == 'GALAHAD' ? "selected" : "" %>>Galahad</option>
+                <option value="BEDEMIR"<%= actor == 'BEDEMIR' ? "selected" : "" %>>Bedemir</option>
+                <option value="NARRATOR"<%= actor == 'NARRATOR' ? "selected" : "" %>>Narrator</option>
+                <option value="FRENCH GUARD"<%= actor == 'FRENCH GUARD' ? "selected" : "" %>>French Guard</option>
+                <option value="GUARD"<%= actor == 'GUARD' ? "selected" : "" %>>Any Guard</option>
+                <option value="BLACK KNIGHT"<%= actor == 'BLACK KNIGHT' ? "selected" : "" %>>Black Knight</option>
+                <option value="KNIGHT OF NEE"<%= actor == 'KNIGHT OF NEE' ? "selected" : "" %>>Knight of Nee</option>
+                <option value="HEAD"<%= actor == 'HEAD' ? "selected" : "" %>>Three Headed Knight</option>
+                <option value="KNIGHT"<%= actor == 'KNIGHT' ? "selected" : "" %>>Any Knight</option>
+                <option value="MINSTREL"<%= actor == 'MINSTREL' ? "selected" : "" %>>Minstrel</option>
+                <option value="CONCORDE"<%= actor == 'CONCORDE' ? "selected" : "" %>>Concorde</option>
+                <option value="MAYNARD"<%= actor == 'MAYNARD' ? "selected" : "" %>>Maynard</option>
+                <option value="PATSY"<%= actor == 'PATSY' ? "selected" : "" %>>Patsy</option>
+                <option value="TIM"<%= actor == 'TIM' ? "selected" : "" %>>Tim The Enchanter</option>
+                <option value="GOD"<%= actor == 'GOD' ? "selected" : "" %>>God</option>
+                <option value="DENNIS"<%= actor == 'DENNIS' ? "selected" : "" %>>Dennis</option>
+                <option value="WOMAN"<%= actor == 'WOMAN' ? "selected" : "" %>>Woman</option>
+                <option value="CROWD"<%= actor == 'CROWD' ? "selected" : "" %>>Crowd</option>
+                <option value="WITCH"<%= actor == 'WITCH' ? "selected" : "" %>>Witch</option>
+                <option value="VILLAGER"<%= actor == 'VILLAGER' ? "selected" : "" %>>Villager</option>
+                <option value="MORTICIAN"<%= actor == 'MORTICIAN' ? "selected" : "" %>>Mortician</option>
+                <option value="CUSTOMER"<%= actor == 'CUSTOMER' ? "selected" : "" %>>Customer</option>
+                <option value="DEAD PERSON"<%= actor == 'DEAD PERSON' ? "selected" : "" %>>Dead Person</option>
+                <option value="HERBERT"<%= actor == 'HERBERT' ? "selected" : "" %>>Herbert</option>
+                <option value="FATHER"<%= actor == 'FATHER' ? "selected" : "" %>>Father</option>
+                <option value="ZOOT"<%= actor == 'ZOOT' ? "selected" : "" %>>Zoot</option>
+                <option value="DINGO"<%= actor == 'DINGO' ? "selected" : "" %>>Dingo</option>
+                <option value="PIGLET"<%= actor == 'PIGLET' ? "selected" : "" %>>Piglet</option>
+                <option value="GIRLS"<%= actor == 'GIRLS' ? "selected" : "" %>>Girls</option>
+                <option value="ROGER"<%= actor == 'ROGER' ? "selected" : "" %>>Roger The Shrubber</option>
+                <option value="CRONE"<%= actor == 'CRONE' ? "selected" : "" %>>Crone</option>
+                <option value="KEEPER"<%= actor == 'KEEPER' ? "selected" : "" %>>Keeper</option>
+            </select>
+        </div>
+        <div class="filter">
+            <select name="Scene" onchange="this.form.submit()">
+                <option value="">-- All Scenes --</option>
+                <option value="Scene 1"<%= scene == 'Scene 1' ? "selected" : "" %>>Scene 1</option>
+                <option value="Scene 2"<%= scene == 'Scene 2' ? "selected" : "" %>>Scene 2</option>
+                <option value="Scene 3"<%= scene == 'Scene 3' ? "selected" : "" %>>Scene 3</option>
+                <option value="Scene 4"<%= scene == 'Scene 4' ? "selected" : "" %>>Scene 4</option>
+                <option value="Scene 5"<%= scene == 'Scene 5' ? "selected" : "" %>>Scene 5</option>
+                <option value="Narrative Interlude"<%= scene == 'Narrative Interlude' ? "selected" : "" %>>Narrative Interlude</option>
+                <option value="Scene 6"<%= scene == 'Scene 6' ? "selected" : "" %>>Scene 6</option>
+                <option value="Scene 7"<%= scene == 'Scene 7' ? "selected" : "" %>>Scene 7</option>
+                <option value="Scene 8"<%= scene == 'Scene 8' ? "selected" : "" %>>Scene 8</option>
+                <option value="Scene 9"<%= scene == 'Scene 9' ? "selected" : "" %>>Scene 9</option>
+                <option value="Scene 10"<%= scene == 'Scene 10' ? "selected" : "" %>>Scene 10</option>
+                <option value="Scene 11"<%= scene == 'Scene 11' ? "selected" : "" %>>Scene 11</option>
+                <option value="Narrative Interlude 2"<%= scene == 'Narrative Interlude 2' ? "selected" : "" %>>Narrative Interlude 2</option>
+                <option value="Scene 24"<%= scene == 'Scene 24' ? "selected" : "" %>>Scene 24</option>
+                <option value="Scene 25"<%= scene == 'Scene 25' ? "selected" : "" %>>Scene 25</option>
+                <option value="Scene 26"<%= scene == 'Scene 26' ? "selected" : "" %>>Scene 26</option>
+                <option value="Scene 27"<%= scene == 'Scene 27' ? "selected" : "" %>>Scene 27</option>
+                <option value="Scene 28"<%= scene == 'Scene 28' ? "selected" : "" %>>Scene 28</option>
+                <option value="Scene 29"<%= scene == 'Scene 29' ? "selected" : "" %>>Scene 29</option>
+                <option value="Scene 30"<%= scene == 'Scene 30' ? "selected" : "" %>>Scene 30</option>
+                <option value="Scene 31"<%= scene == 'Scene 31' ? "selected" : "" %>>Scene 31</option>
+                <option value="Narrative Interlude 3"<%= scene == 'Narrative Interlude 3' ? "selected" : "" %>>Narrative Interlude 3</option>
+                <option value="Scene 32"<%= scene == 'Scene 32' ? "selected" : "" %>>Scene 32</option>
+                <option value="Scene 33"<%= scene == 'Scene 33' ? "selected" : "" %>>Scene 33</option>
+                <option value="Scene 34"<%= scene == 'Scene 34' ? "selected" : "" %>>Scene 34</option>
+                <option value="Scene 35"<%= scene == 'Scene 35' ? "selected" : "" %>>Scene 35</option>
+                <option value="Scene 36"<%= scene == 'Scene 36' ? "selected" : "" %>>Scene 36</option>
+                <option value="Scene 37"<%= scene == 'Scene 37' ? "selected" : "" %>>Scene 37</option>
+            </select>
+        </div>
+        <div class="filter">
+            <select name="NumLines" onchange="this.form.submit()">
+                <option value="10"<%= numLines == '10' ? "selected" : "" %>>10 lines</option>
+                <option value="20"<%= numLines == '20' ? "selected" : "" %>>20 lines</option>
+                <option value="30"<%= numLines == '30' ? "selected" : "" %>>30 lines</option>
+                <option value="40"<%= numLines == '40' ? "selected" : "" %>>40 lines</option>
+                <option value="50"<%= numLines == '50' ? "selected" : "" %>>50 lines</option>
+            </select>
+        </div>
+        <div class="filter">
+            <input type="submit" value="Generate" />
+        </div>
     </form>
+    
+    <div class="clear"></div>
 </div>
-<p>
-<% for(var i=0; i<lines.length; i++) { %>
-    <% if(i % 10 == 0) { %>
-</p>
-<p>
+
+<div id="lines">
+    <p>
+    <% for(var i=0; i<lines.length; i++) { %>
+        <% if(i % 10 == 0) { %>
+    </p>
+    <p>
+        <% } %>
+    <%= lines[i].line %>
     <% } %>
-<%= lines[i].line %>
-<% } %>
-</p>
+    </p>
+</div>
+
 <% include footer %>

@@ -7,7 +7,7 @@ import appConfig = require('../conf/app-config');
 import modelFactory = require('../models/sequelize-model-factory');
 
 
-export function index(req: express.Request, res: express.Response) {
+export function view(req: express.Request, res: express.Response) {
 
     // var _:sequelize.Lodash = sequelize.Utils._;
     var gaConfig = new appConfig.gaConfig();
@@ -28,13 +28,17 @@ export function index(req: express.Request, res: express.Response) {
         };
     }
     if(scene) {
-        params.where.scene = scene;
+        params.include = [{
+            model: models.scene,
+            where: {'scene': scene}
+        }];
     }
 
     models.line.findAll(params)
         .then(function(lineRows) {
             var pageData = {
-                title: 'The Holy Grail of Lorem Ipsum',
+                page: 'index',
+                title: 'The Holy Grail\nof Lorem Ipsum',
                 gaCode: gaConfig.key,
                 actor: actor,
                 scene: scene,

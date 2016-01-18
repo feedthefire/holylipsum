@@ -1,0 +1,21 @@
+<% include header %>
+
+<h1><%= title %></h1>
+
+<div id="lines" class="pt10 pb10">
+    <p>
+        Browse by scene:
+    </p>
+    <p>
+    <% for(var i=0; i<scenes.length; i++) { %>
+        <div class="line-row truncate">
+            <a href="/scenes/<%= scenes[i].scene.replace(' ', '-') %>"><%= scenes[i].scene %></a>
+            <span class="ltgrey">(<%= scenes[i].dataValues.line_count %> lines)</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <%= scenes[i].dataValues.description %>
+        </div>
+    <% } %>
+    </p>
+</div>
+
+<% include footer %>

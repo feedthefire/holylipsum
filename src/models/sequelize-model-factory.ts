@@ -21,6 +21,7 @@ export class Models {
     public SEQUELIZE:sequelize.Sequelize;
 
     public line:types.lineModel;
+    public scene:types.sceneModel;
 
 
     constructor(database:string, username:string, password:string, options:sequelize.Options) {
@@ -30,7 +31,7 @@ export class Models {
 
         this.line = <types.lineModel> this.SEQUELIZE.define<types.lineInstance, types.linePojo>('line', {
                 'id': {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-                'scene': Sequelize.STRING,
+                'scene_id': Sequelize.INTEGER,
                 'actor': Sequelize.STRING,
                 'line': Sequelize.STRING,
                 'date_created': Sequelize.DATE,
@@ -44,7 +45,7 @@ export class Models {
                         var id:number = parseInt(line);
                         if (isNaN(id)) {
                             if (line['id'] !== undefined) { where['id'] = line['id']}
-                            if (line['scene'] !== undefined) { where['scene'] = line['scene']}
+                            if (line['scene_id'] !== undefined) { where['scene_id'] = line['scene_id']}
                             if (line['actor'] !== undefined) { where['actor'] = line['actor']}
                             if (line['line'] !== undefined) { where['line'] = line['line']}
                             if (line['date_created'] !== undefined) { where['date_created'] = line['date_created']}
@@ -56,6 +57,35 @@ export class Models {
                     }
                 }
             });
+        
+        this.scene = <types.sceneModel> this.SEQUELIZE.define<types.sceneInstance, types.scenePojo>('scene', {
+                'id': {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+                'scene': Sequelize.STRING,
+                'description': Sequelize.STRING,
+                'line_count': Sequelize.INTEGER
+            },
+            {
+                timestamps: false,
+                classMethods: {
+                    getscene: (scene:any) => {
+                        var where:{[key:string]:any} = {};
+                        var id:number = parseInt(scene);
+                        if (isNaN(id)) {
+                            if (scene['id'] !== undefined) { where['id'] = scene['id']}
+                            if (scene['scene'] !== undefined) { where['scene'] = scene['scene']}
+                            if (scene['description'] !== undefined) { where['description'] = scene['description']}
+                            if (scene['line_count'] !== undefined) { where['line_count'] = scene['line_count']}
+                        } else {
+                            where['id'] = id;
+                        }
+                        return self.scene.find({where: where});
+                    }
+                }
+            });
+        
+        this.scene.hasMany(this.line, {foreignKey: 'scene_id'});
+        this.line.belongsTo(this.scene, {foreignKey: 'scene_id'});
+
             }
 
 }
